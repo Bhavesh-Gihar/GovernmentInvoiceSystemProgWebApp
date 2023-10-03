@@ -1,0 +1,23 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "ionicReactApp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    },
+    "@capacitor-community/firebase-analytics": {
+      "apiKey": "AIzaSyA4jfCY-hX9xYLc_jNLo0zIEV56PjuHBJk",
+      "authDomain": "govtinvoice-91d0a.firebaseapp.com",
+      "databaseURL": "YOUR_DATABASE_URL",
+      "projectId": "govtinvoice-91d0a",
+      "storageBucket": "govtinvoice-91d0a.appspot.com",
+      "messagingSenderId": "113420280990",
+      "appId": "1:113420280990:web:ac125254fc08cef272478f"
+    }
+
+  },
+  "cordova": {}
+}
