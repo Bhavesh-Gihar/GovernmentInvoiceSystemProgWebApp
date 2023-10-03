@@ -11,6 +11,7 @@ import {
   IonFabButton,
   IonPopover,
   IonPage,
+  IonMenu,
 } from "@ionic/react";
 import { settings, menu, download, calculator} from "ionicons/icons";
 
@@ -51,14 +52,13 @@ import { Preferences } from '@capacitor/preferences';
 import * as firebase from "firebase/app"; // Import Firebase
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA4jfCY-hX9xYLc_jNLo0zIEV56PjuHBJk",
-  authDomain: "govtinvoice-91d0a.firebaseapp.com",
-  projectId: "govtinvoice-91d0a",
-  storageBucket: "govtinvoice-91d0a.appspot.com",
-  messagingSenderId: "113420280990",
-  appId: "1:113420280990:web:ac125254fc08cef272478f",
+  apiKey: "AIzaSyD3aQcGIhwqzeSXWJ4OOGniQGiGg1ze5KY",
+  authDomain: "sihprogwebapp.firebaseapp.com",
+  projectId: "sihprogwebapp",
+  storageBucket: "sihprogwebapp.appspot.com",
+  messagingSenderId: "713116411305",
+  appId: "1:713116411305:web:d0cdd36a4c44c1498cd0b8"
 };
-
 
 
 // Initialize Firebase
@@ -170,7 +170,7 @@ const App: React.FC = () => {
       <IonPage>
         <IonContent>
           <IonHeader>
-            <IonToolbar color="primary">
+            <IonToolbar color="tertiary">
               <Login />
 
               {selectedFile === "default" ? (

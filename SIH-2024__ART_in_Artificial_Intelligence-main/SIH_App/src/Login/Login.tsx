@@ -126,7 +126,7 @@ const Login: React.FC = () => {
 
   return (
     <React.Fragment>
-      <IonButton
+      <IonButton color="medium"
         slot="start"
         className="ion-padding-start"
         onClick={() => {

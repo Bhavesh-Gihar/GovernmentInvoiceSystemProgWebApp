@@ -27,7 +27,7 @@
     "capacitor-email-composer": "^2.0.1",
     "cordova-plugin-email-composer": "^0.9.2",
     "cordova-plugin-printer": "^0.8.0",
-    "firebase": "^10.3.1",
+    "firebase": "^10.4.0",
     "ionicons": "^5.0.0",
     "jetifier": "^1.6.5",
     "mailgun-js": "^0.22.0",

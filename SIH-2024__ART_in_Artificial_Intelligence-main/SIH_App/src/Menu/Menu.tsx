@@ -5,7 +5,7 @@ import { isPlatform, IonToast, IonItem } from "@ionic/react";
 import { EmailComposer } from "@ionic-native/email-composer";
 import { Printer } from "@ionic-native/printer";
 import { IonActionSheet, IonAlert, IonModal, IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonContent, IonFab, IonFabButton, IonIcon } from "@ionic/react";
-import { saveOutline, save, mail, print } from "ionicons/icons";
+import { saveOutline, save, mail, print, gridOutline } from "ionicons/icons";
 import { Resend } from 'resend';
 import { app } from "../App/App";
 import { getAuth } from "firebase/auth";
@@ -199,7 +199,7 @@ const Menu: React.FC<{
             <IonButtons slot="start">
               <IonButton onClick={() => setshowModal(false)}>Close</IonButton>
             </IonButtons>
-            <IonTitle>Menu</IonTitle>
+            <IonTitle slot="centre">Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent>
@@ -212,8 +212,8 @@ const Menu: React.FC<{
       </IonModal>
 
       <IonFab vertical="bottom" horizontal="end" slot="fixed">
-        <IonFabButton onClick={()=>setshowModal(true)}>
-          <IonIcon icon={saveOutline} />
+        <IonFabButton color="tertiary" onClick={()=>setshowModal(true)}>
+          <IonIcon icon={gridOutline} />
         </IonFabButton>
       </IonFab>
 
