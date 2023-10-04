@@ -12,8 +12,9 @@ import {
   IonPopover,
   IonPage,
   IonMenu,
+  IonLoading,
 } from "@ionic/react";
-import { settings, menu, download, calculator} from "ionicons/icons";
+import { settings, menu, download, logoPaypal} from "ionicons/icons";
 
 import * as AppGeneral from "../socialcalc/AppGeneral";
 import { DATA } from "../app-data.js";
@@ -74,6 +75,7 @@ const App: React.FC = () => {
   const [selectedFile, updateSelectedFile] = useState("default");
   const [introSeen, setIntroSeen] = useState(false);
   const [billType, updateBillType] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
   const [device] = useState(AppGeneral.getDeviceType());
 
   const store = new Local();
@@ -99,7 +101,7 @@ const App: React.FC = () => {
   };
   
   const showIntro = async () => {
-    if(introSeen) {
+    if(!introSeen) {
       await Dialog.alert({
         title: 'Welcome to Imperial Order',
         message: 'Our Government Billing and Invoicing System Prototype',
@@ -130,13 +132,13 @@ const App: React.FC = () => {
   } 
   
   const checkCanOpenUrl = async () => {
-    const { value } = await AppLauncher.canOpenUrl({ url: 'com.getcapacitor.myapp' });
+    const { value } = await AppLauncher.canOpenUrl({ url: 'Net.one97.paytm://' });
   
     console.log('Can open url: ', value);
   };
   
-  const openPortfolioPage = async () => {
-    await AppLauncher.openUrl({ url: 'com.getcapacitor.myapp://page?id=portfolio' });
+  const openPaytm = async () => {
+    await AppLauncher.openUrl({ url: 'Net.one97.paytm://' });
   };
 
   const showAlert = async () => {
@@ -167,6 +169,7 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
+      <IonLoading isOpen={true} message="Loading" showBackdrop={true} duration={3000} />
       <IonPage>
         <IonContent>
           <IonHeader>
@@ -197,12 +200,12 @@ const App: React.FC = () => {
                   }}
                 />
                 <IonIcon
-                  icon={calculator}
+                  icon={logoPaypal}
                   slot="end"
                   className="ion-padding-end"
                   size="large"
                   onClick={(e) => {
-                    if(checkCanOpenUrl()) openPortfolioPage();
+                    if(checkCanOpenUrl()) openPaytm();
                   }}
                 />
               <Files

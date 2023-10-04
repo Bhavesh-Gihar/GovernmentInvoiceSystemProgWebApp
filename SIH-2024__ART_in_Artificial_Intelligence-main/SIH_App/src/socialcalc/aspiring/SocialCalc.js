@@ -115,6 +115,8 @@ if (!SocialCalc) SocialCalc = {};
 //
 // *************************************
 
+const defaultRowNameWidthAdjusted = (window.screen.width < 600 ? "12.5" : "40");
+
 SocialCalc.Constants = {
 
 //
@@ -161,7 +163,7 @@ SocialCalc.Constants = {
 
    //*** SocialCalc.RenderContext
 
-   defaultRowNameWidth: "30", // used to set minimum width of the row header column - a string in pixels
+   defaultRowNameWidth: defaultRowNameWidthAdjusted, // used to set minimum width of the row header column - a string in pixels
    defaultAssumedRowHeight: 15, // used when guessing row heights - number
    defaultCellIDPrefix: "cell_", // if non-null, each cell will render with an ID starting with this
 

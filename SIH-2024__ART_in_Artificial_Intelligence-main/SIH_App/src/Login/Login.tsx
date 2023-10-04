@@ -152,7 +152,7 @@ const Login: React.FC = () => {
           src={user?.photoURL}
           style={{ height: "30px", aspectRatio: "1", borderRadius: "50%" }}
         />
-        {user?.email}
+        {window.screen.width > 600 && user?.email}
       </div>
       }
       

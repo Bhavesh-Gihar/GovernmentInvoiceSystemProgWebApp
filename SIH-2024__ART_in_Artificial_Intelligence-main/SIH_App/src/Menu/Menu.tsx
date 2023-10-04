@@ -5,7 +5,7 @@ import { isPlatform, IonToast, IonItem } from "@ionic/react";
 import { EmailComposer } from "@ionic-native/email-composer";
 import { Printer } from "@ionic-native/printer";
 import { IonActionSheet, IonAlert, IonModal, IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonContent, IonFab, IonFabButton, IonIcon } from "@ionic/react";
-import { saveOutline, save, mail, print, gridOutline } from "ionicons/icons";
+import { saveOutline, save, mail, print, gridOutline, closeCircleOutline, printOutline, sendOutline } from "ionicons/icons";
 import { Resend } from 'resend';
 import { app } from "../App/App";
 import { getAuth } from "firebase/auth";
@@ -175,7 +175,7 @@ const Menu: React.FC<{
     },
     {
       text: "Print",
-      icon: print,
+      icon: printOutline,
       handler: () => {
         doPrint();
         console.log("Print clicked");
@@ -183,7 +183,7 @@ const Menu: React.FC<{
     },
     {
       text: "Email",
-      icon: mail,
+      icon: sendOutline,
       handler: () => {
         sendEmail();
         console.log("Email clicked");
@@ -195,18 +195,19 @@ const Menu: React.FC<{
     <>
       <IonModal isOpen={showModal}>
         <IonHeader>
-          <IonToolbar color={'success'}>
+          <IonToolbar color={'tertiary'}>
             <IonButtons slot="start">
-              <IonButton onClick={() => setshowModal(false)}>Close</IonButton>
+              <IonButton onClick={() => setshowModal(false)}><IonIcon icon={closeCircleOutline} /></IonButton>
             </IonButtons>
             <IonTitle slot="centre">Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent>
           {buttons.map((item, index) => (
-            <IonItem>
-              <IonButton onClick={item.handler}>{item.text}</IonButton>
-            </IonItem>
+            <IonButton color="medium" expand="block" onClick={item.handler}>
+              <IonIcon icon={item.icon} slot="start" className="padding-right"/>
+              {item.text}
+            </IonButton>
           ))}
         </IonContent>
       </IonModal>
